@@ -1,0 +1,68 @@
+<html>
+  <header>
+    <title>BugTracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script>
+      document.onreadystatechange = () => {
+        if (document.readyState === 'interactive') {
+          document.getElementById('userAgent').value = window.navigator.userAgent;
+          document.getElementById('userDate').value = new Date();
+        }
+      };
+    </script>
+  </header>
+  
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">BugTracker</a>
+    </nav>    
+
+    <div class="container">
+      <h1>Ferramenta de Report de Bugs</h1>
+      <p>Preencha todos os dados a seguir</p>
+  
+      <form method="POST">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" class="form-control" name="name" id="name">
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" name="email" id="email">
+        </div>
+  
+        <div class="form-group">
+          <label for="issueType">Classificação:</label>
+          <select name="issueType" id="issueType" class="form-control" >
+            <option value="">Selecione</option>
+            <option value="CRITICAL">Crítico</option>
+            <option value="BUG">Bug</option>
+            <option value="ENHANCEMENT">Melhoria</option>
+          </select>
+        </div>
+  
+        <div class="form-group">
+          <label for="howToReproduce">Como reproduzir o erro?</label>
+          <textarea class="form-control" name="howToReproduce" id="howToReproduce"></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="expectedOutput">Saída esperada?</label>
+          <textarea class="form-control" name="expectedOutput" id="expectedOutput"></textarea>      
+        </div>
+  
+        <div class="form-group">
+          <label for="receivedOutput">Saída recebida?</label>
+          <textarea class="form-control" name="receivedOutput" id="receivedOutput"></textarea>
+        </div>
+  
+        <input type="hidden" id="userAgent" name="userAgent" >
+        <input type="hidden" id="userDate" name="userDate" >
+        
+        <button class="btn btn-primary">Enviar Solicitação</button>
+      </form>
+    </div>
+  </body>
+</html>
