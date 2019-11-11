@@ -13,9 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
 
-sgMail.setApiKey('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');
+sgMail.setApiKey('SGMAIL_API_KEY');
 
-const docId = '17DKLD-37yIas5kU_TLQU2RZ9iyck2l-ZA2O9uQDiEWE';
+const docId = 'DOC_ID';
 const worksheetIndex = 0;
 
 app.get('/', (request, response) => {
